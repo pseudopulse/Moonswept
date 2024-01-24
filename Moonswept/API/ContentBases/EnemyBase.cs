@@ -26,6 +26,7 @@ namespace Moonswept.Utils.ContentBases {
     public abstract class EnemyBase {
         public static List<EnemyBase> Instances = new();
         public abstract string EnemyName { get; }
+        public abstract string EnemyTerminalEntry { get; }
         public abstract int PowerLevel { get; }
         public abstract int MaximumSpawns { get; }
         public abstract EnemyClass EnemyClass { get; }
@@ -36,6 +37,8 @@ namespace Moonswept.Utils.ContentBases {
         public virtual float StunMultiplier { get; } = 2f;
         // ---
         public EnemyType EnemyType;
+        public TerminalNode TerminalNode;
+        public TerminalKeyword Keyword;
         public virtual void Initialize() {
             Instances.Add(this);
             EnemyPrefab = GetEnemyObject();
@@ -56,6 +59,41 @@ namespace Moonswept.Utils.ContentBases {
             EnemyType.MaxCount = MaximumSpawns;
             EnemyType.PowerLevel = PowerLevel;
             EnemyType.stunTimeMultiplier = StunMultiplier;
+        }
+
+        public virtual void SetupTerminalNode() {
+            TerminalNode = ScriptableObject.CreateInstance<TerminalNode>();
+            TerminalNode.displayText = EnemyTerminalEntry;
+            TerminalNode.clearPreviousText = true;
+            TerminalNode.maxCharactersToType = 35;
+            TerminalNode.creatureName = EnemyName;
+
+            SetupTerminalKeyword();
+
+            ScanNodeProperties prop = EnemyPrefab.GetComponentInChildren<ScanNodeProperties>();
+
+            if (prop) {
+                prop.creatureScanID = TerminalNode.creatureFileID;
+            }
+        }
+
+        public virtual void SetupTerminalKeyword() {
+            Keyword = ScriptableObject.CreateInstance<TerminalKeyword>();
+            Keyword.word = EnemyName.ToLower().Replace(" ", "-");
+            Keyword.compatibleNouns = new CompatibleNoun[] { new CompatibleNoun() {
+                noun = Keyword,
+                result = TerminalNode
+            }};
+        }
+
+        public void SetFileID(int id) {
+            TerminalNode.creatureFileID = id;
+
+            ScanNodeProperties prop = EnemyPrefab.GetComponentInChildren<ScanNodeProperties>();
+
+            if (prop) {
+                prop.creatureScanID = TerminalNode.creatureFileID;
+            }
         }
 
         public virtual void PostCreation() {
