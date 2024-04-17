@@ -4,7 +4,6 @@ global using Moonswept.Utils.Attributes;
 global using Moonswept.Utils.ContentBases;
 global using Moonswept.Utils.Extensions;
 global using Moonswept.Utils.Helpers;
-global using Moonswept.Utils.Managers;
 global using System.Collections.Generic;
 global using System.Linq;
 global using UnityEngine;

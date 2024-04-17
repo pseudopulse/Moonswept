@@ -21,6 +21,9 @@
             <HintPath>lib/Assembly-CSharp.dll</HintPath>
             <Publicize>true</Publicize>
         </Reference>
+        <Reference Include="LethalLib">
+            <HintPath>lib/LethalLib.dll</HintPath>
+        </Reference>
         <Reference Include="MMHOOK_Assembly-CSharp">
             <HintPath>lib/MMHOOK_Assembly-CSharp.dll</HintPath>
             <Publicize>true</Publicize>

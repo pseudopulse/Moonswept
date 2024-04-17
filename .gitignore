@@ -11,6 +11,7 @@
 *.sln.docstates
 
 build.sh
+MSBuild
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
