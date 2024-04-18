@@ -34,6 +34,7 @@ namespace Moonswept {
         private Vector3 initialPos;
         private float stopwatch = 0f;
         public GameObject fogPrefab;
+        private float stopwatch2 = 0f;
         public enum BehaviourState {
             Wander,
             Retreat,
@@ -51,7 +52,7 @@ namespace Moonswept {
         {
             base.Update();
 
-            transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.fixedDeltaTime);
+            modelRoot.transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.fixedDeltaTime);
             movementStopwatch += Time.fixedDeltaTime;
             if (movementStopwatch >= 4f) movementStopwatch = 0;
             modelRoot.transform.localPosition = new(0, 2.24f + movement.Evaluate(movementStopwatch), 0);
@@ -61,19 +62,27 @@ namespace Moonswept {
         {
             base.DoAIInterval();
 
-            if (!CheckLineOfSightForPosition(targetPlayer.transform.position)) {
-                targetPlayer = null;
+            if (isEnemyDead) {
+                Debug.Log("we fucking died lmao!");
+            }
+
+            stopwatch2 += AIIntervalTime;
+
+            if (stopwatch2 >= 0.5f) {
+                stopwatch2 = 0f;
+                Debug.Log("spawning fog");
+                SpawnFogClientRpc();
             }
 
             switch ((BehaviourState)currentBehaviourStateIndex) {
                 case BehaviourState.Wander:
                     agent.speed = 2f;
                     
-                    if (TargetClosestPlayer(5.5f, false, 360)) {
+                    /*if (TargetClosestPlayer(5.5f, false, 360)) {
                         stopwatch = 0f;
                         StopSearch(currentSearch);
                         SwitchToBehaviourState((int)BehaviourState.DispenseGas);
-                    }
+                    }*/
 
                     break;
                 case BehaviourState.Retreat:
