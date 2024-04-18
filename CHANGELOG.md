@@ -1,3 +1,7 @@
+# 0.5.2
+
+- fixed Mobile Turret lobotomizing itself
+
 # 0.5.1
 
 - fixed the Cleaning Drone not being scannable

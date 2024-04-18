@@ -80,11 +80,12 @@ namespace Moonswept {
                 return;
             }
 
+
             switch (currentBehaviourStateIndex) {
                 case (int)BehaviourState.Patrolling:
                     agent.speed = 2f;
                     
-                    if (TargetClosestPlayer(50f, true, 70)) {
+                    if (TargetClosestPlayer(10f, false, 70)) {
                         StopSearch(currentSearch);
                         SwitchToBehaviourState((int)BehaviourState.Chasing);
                         Debug.Log("patrol -> chase");
@@ -94,7 +95,7 @@ namespace Moonswept {
                 case (int)BehaviourState.LockingOn:
                     agent.speed = 0f;
 
-                    if (!targetPlayer || !CheckLineOfSightForPosition(targetPlayer.transform.position, 70, 60)) {
+                    if (!targetPlayer || !CheckLineOfSightForPosition(targetPlayer.transform.position, 360, 60)) {
                         lockOnTimer = 0f;
                         Debug.Log("no line of sight");
                         SwitchToBehaviourState((int)BehaviourState.Chasing);
@@ -115,6 +116,10 @@ namespace Moonswept {
                 case (int)BehaviourState.Chasing:
                     agent.speed = 4f;
 
+                    if (targetLastSeenAt != Vector3.zero) {
+                        SetDestinationToPosition(targetLastSeenAt);
+                    }
+
                     if (targetPlayer) {
                         targetLastSeenAt = targetPlayer.transform.position;
 
@@ -127,7 +132,8 @@ namespace Moonswept {
                         return;
                     }
 
-                    if (Vector3.Distance(targetLastSeenAt, base.transform.position) < 3f) {
+                    if (targetLastSeenAt == Vector3.zero || Vector3.Distance(targetLastSeenAt, base.transform.position) < 3f) {
+                        targetLastSeenAt = Vector3.zero;
                         StartSearch(transform.position);
                         SwitchToBehaviourState((int)BehaviourState.Patrolling);
                         Debug.Log("chase -> patrol");
@@ -142,7 +148,7 @@ namespace Moonswept {
                     if (firingTimer >= 2f) {
                         firingTimer = 0f;
                         StartSearch(transform.position);
-                        SwitchToBehaviourState((int)BehaviourState.Patrolling);
+                        SwitchToBehaviourState((int)BehaviourState.Chasing);
                         Debug.Log("fire -> patrol");
                         StopGunshotsClientRpc();
                     }
