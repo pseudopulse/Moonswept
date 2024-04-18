@@ -149,6 +149,9 @@ namespace Moonswept {
             }
 
             stopwatch += Time.fixedDeltaTime;
+            if (stopwatch >= 1.5f) {
+                GetComponentInChildren<ParticleSystem>().Stop();
+            }
             if (stopwatch >= destroyAfter) {
                 GameObject.Destroy(this.gameObject);
             }

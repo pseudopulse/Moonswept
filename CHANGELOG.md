@@ -1,3 +1,8 @@
+# 0.5.3
+
+- fixed Mobile Turret having no collision
+- made Cleaning Drone's TZP gas fade in/out as smoothly as i could
+
 # 0.5.2
 
 - fixed Mobile Turret lobotomizing itself
