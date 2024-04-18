@@ -1,6 +1,6 @@
 {
     "name": "Moonswept",
-    "version_number": "0.5.0",
+    "version_number": "0.5.1",
     "website_url": "https://github.com/pseudopulse/Moonswept/",
     "description": "An enemy pack that adds 2 new enemies",
     "dependencies": [
