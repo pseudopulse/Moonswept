@@ -1,0 +1,9 @@
+{
+    "name": "Moonswept",
+    "version_number": "0.5.0",
+    "website_url": "",
+    "description": "An enemy pack that adds 2 new enemies",
+    "dependencies": [
+        "Evaisa-LethalLib-0.15.1"
+    ]
+}
