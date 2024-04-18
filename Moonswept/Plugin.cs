@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Moonswept
 {
-    [BepInPlugin("MoonsweptTeam.Moonswept", "Moonswept", "1.0.0")]
+    [BepInPlugin("MoonsweptTeam.Moonswept", "Moonswept", "0.5.0")]
     public class Main : BaseUnityPlugin
     {
         public static ConfigFile config;
