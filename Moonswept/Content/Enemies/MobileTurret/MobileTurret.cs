@@ -129,8 +129,14 @@ namespace Moonswept {
                             Debug.Log("chase -> lock");
                         }
 
+                        if (!CheckLineOfSightForPosition(targetPlayer.transform.position, 90, 60)) {
+                            targetPlayer = null;
+                        }
+
                         return;
+
                     }
+                    
 
                     if (targetLastSeenAt == Vector3.zero || Vector3.Distance(targetLastSeenAt, base.transform.position) < 3f) {
                         targetLastSeenAt = Vector3.zero;

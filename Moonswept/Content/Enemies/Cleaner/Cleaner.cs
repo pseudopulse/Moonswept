@@ -77,12 +77,6 @@ namespace Moonswept {
             switch ((BehaviourState)currentBehaviourStateIndex) {
                 case BehaviourState.Wander:
                     agent.speed = 2f;
-                    
-                    /*if (TargetClosestPlayer(5.5f, false, 360)) {
-                        stopwatch = 0f;
-                        StopSearch(currentSearch);
-                        SwitchToBehaviourState((int)BehaviourState.DispenseGas);
-                    }*/
 
                     break;
                 case BehaviourState.Retreat:
