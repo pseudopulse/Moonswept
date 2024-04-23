@@ -12,13 +12,13 @@ namespace Moonswept {
         public override void Initialize()
         {
             base.Initialize();
-            Debug.Log("Spawning.");
+            // Debug.Log("Spawning.");
             enemy = Main.assets.LoadAsset<EnemyType>("WalkerTurret.asset");
             tNode = Main.assets.LoadAsset<TerminalNode>("WalkerTurretTN.asset");
             tKeyword = Main.assets.LoadAsset<TerminalKeyword>("WalkerTurretTK.asset");
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(Main.assets.LoadAsset<GameObject>("WalkerTurret.prefab"));
             Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("Mobile Turret", "Weight", 78, "Spawn weight. Higher is more common.").Value, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
-            Debug.Log("registered!");
+            // Debug.Log("registered!");
         }
     }
 
@@ -81,14 +81,23 @@ namespace Moonswept {
             }
 
 
+            // Debug.Log("do we have a target?: " + targetPlayer);
+            // Debug.Log("last seen position: " + targetLastSeenAt);
+
+
             switch (currentBehaviourStateIndex) {
                 case (int)BehaviourState.Patrolling:
                     agent.speed = 2f;
                     
                     if (TargetClosestPlayer(10f, false, 70)) {
+                        if (Vector3.Distance(targetPlayer.transform.position, base.transform.position) > 10f) {
+                            targetPlayer = null;
+                            return;
+                        }
+
                         StopSearch(currentSearch);
                         SwitchToBehaviourState((int)BehaviourState.Chasing);
-                        Debug.Log("patrol -> chase");
+                        // Debug.Log("patrol -> chase");
                     }
 
                     break;
@@ -97,9 +106,9 @@ namespace Moonswept {
 
                     if (!targetPlayer || !CheckLineOfSightForPosition(targetPlayer.transform.position, 360, 60)) {
                         lockOnTimer = 0f;
-                        Debug.Log("no line of sight");
+                        // Debug.Log("no line of sight");
                         SwitchToBehaviourState((int)BehaviourState.Chasing);
-                        Debug.Log("lock -> chase");
+                        // Debug.Log("lock -> chase");
                         targetPlayer = null;
                     }
 
@@ -109,7 +118,7 @@ namespace Moonswept {
                         lockOnTimer = 0f;
                         StartGunshotsClientRpc();
                         SwitchToBehaviourState((int)BehaviourState.Firing);
-                        Debug.Log("fire");
+                        // Debug.Log("fire");
                     }
 
                     break;
@@ -126,7 +135,7 @@ namespace Moonswept {
                         if (Vector3.Distance(targetLastSeenAt, base.transform.position) < 10f) {
                             lockOnTimer = 0f;
                             SwitchToBehaviourState((int)BehaviourState.LockingOn);
-                            Debug.Log("chase -> lock");
+                            // Debug.Log("chase -> lock");
                         }
 
                         if (!CheckLineOfSightForPosition(targetPlayer.transform.position, 90, 60)) {
@@ -142,7 +151,7 @@ namespace Moonswept {
                         targetLastSeenAt = Vector3.zero;
                         StartSearch(transform.position);
                         SwitchToBehaviourState((int)BehaviourState.Patrolling);
-                        Debug.Log("chase -> patrol");
+                        // Debug.Log("chase -> patrol");
                     }
 
                     break;
@@ -155,7 +164,7 @@ namespace Moonswept {
                         firingTimer = 0f;
                         StartSearch(transform.position);
                         SwitchToBehaviourState((int)BehaviourState.Chasing);
-                        Debug.Log("fire -> patrol");
+                        // Debug.Log("fire -> patrol");
                         StopGunshotsClientRpc();
                     }
                     

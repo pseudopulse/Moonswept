@@ -13,7 +13,7 @@ namespace Moonswept {
         public override void Initialize()
         {
             base.Initialize();
-            Debug.Log("Spawning.");
+            // Debug.Log("Spawning.");
             enemy = Main.assets.LoadAsset<EnemyType>("Cleaner.asset");
             tNode = Main.assets.LoadAsset<TerminalNode>("CleanerTN.asset");
             tKeyword = Main.assets.LoadAsset<TerminalKeyword>("CleanerTK.asset");
@@ -21,7 +21,7 @@ namespace Moonswept {
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(Main.assets.LoadAsset<GameObject>("Cleaner.prefab"));
             // NetworkPrefabs.RegisterNetworkPrefab(fogPrefab);
             Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 90, "Spawn weight. Higher is more common.").Value, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
-            Debug.Log("registered!");
+            // Debug.Log("registered!");
         }
     }
 
@@ -63,14 +63,16 @@ namespace Moonswept {
             base.DoAIInterval();
 
             if (isEnemyDead) {
-                Debug.Log("we fucking died lmao!");
+                // Debug.Log("we fucking died lmao!");
             }
+
+            // Debug.Log(StartOfRound.Instance.drunknessSideEffect.Evaluate(40f));
 
             stopwatch2 += AIIntervalTime;
 
             if (stopwatch2 >= 0.5f) {
                 stopwatch2 = 0f;
-                Debug.Log("spawning fog");
+                // Debug.Log("spawning fog");
                 SpawnFogClientRpc();
             }
 
@@ -80,12 +82,15 @@ namespace Moonswept {
 
                     break;
                 case BehaviourState.Retreat:
-                    agent.speed = 6;
+                    agent.speed = 14;
 
                     float init = Vector3.Distance(initialPos, currentTargetNode.position);
                     float current = Vector3.Distance(transform.position, currentTargetNode.position);
 
-                    if (init / current >= 0.4f) {
+                    // Debug.Log(current + " : " + init);
+                    // Debug.Log(current / init);
+
+                    if (current / init <= 0.4f) {
                         StartSearch(transform.position);
                         SwitchToBehaviourState((int)BehaviourState.Wander);
                         return;
@@ -115,15 +120,21 @@ namespace Moonswept {
         public override void HitEnemy(int force = 1, PlayerControllerB playerWhoHit = null, bool playHitSFX = false, int hitID = -1)
         {
             base.HitEnemy(force, playerWhoHit, playHitSFX, hitID);
+            // Debug.Log("we took damage?");
             StopSearch(currentSearch);
             SwitchToBehaviourState((int)BehaviourState.Retreat);
             initialPos = transform.position;
             currentTargetNode = ChooseFarthestNodeFromPosition(transform.position);
+            enemyHP -= force;
+
+            if (enemyHP <= 0) {
+                KillEnemyClientRpc(true);
+            }
         }
 
         [ClientRpc]
         public void SpawnFogClientRpc() {
-            Debug.Log("Spawning fog.");
+            // Debug.Log("Spawning fog.");
             GameObject.Instantiate(fogPrefab, modelRoot.transform.position, Quaternion.identity);
         }
 

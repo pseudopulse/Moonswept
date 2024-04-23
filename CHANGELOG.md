@@ -1,3 +1,19 @@
+## 0.5.5
+
+- updated Mobile Turret model courtesy of smxrez
+- Mobile Turret now has an ambient sound
+- fixed Mobile Turret no longer playing gunshots
+- fixed Cleaning Drone not taking damage
+- made Cleaning Drone properly run away when struck
+
+
+## 0.5.4
+
+- fixed Mobile Turret chasing you to the ends of the earth throughout the entire fucking facility
+- fixed the Mobile Turret collision breaking its visual effects
+- gave the Cleaning Drone an ambient sound
+- fixed Mobile Turret's gunshots being heard at full vol across the map
+
 ## 0.5.3
 
 - fixed Mobile Turret having no collision
