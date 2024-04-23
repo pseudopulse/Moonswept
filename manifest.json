@@ -2,7 +2,7 @@
     "name": "Moonswept",
     "version_number": "0.5.5",
     "website_url": "https://github.com/pseudopulse/Moonswept/",
-    "description": "An enemy pack that adds 2 new enemies",
+    "description": "Adds 2 new monsters",
     "dependencies": [
         "Evaisa-LethalLib-0.15.1"
     ]
