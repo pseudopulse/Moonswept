@@ -30,7 +30,7 @@ There seems to be no evidence of who made these devices.
 <details>
   <summary>Mobile Turret</summary>
 
-![](https://i.postimg.cc/bv2NG5xG/Turret-roombba-removebg-preview.png)
+![](https://i.postimg.cc/xTjZJ4Kc/untitled-removebg-preview-2.png)
 
 ```
 S.D.L (Sigurd’s Danger Level): 65%
