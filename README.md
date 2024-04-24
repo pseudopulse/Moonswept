@@ -1,5 +1,7 @@
 # Moonswept
 
+### Does not work on v49 or below
+
 Moonswept is an in-dev enemy mod that adds 2 new enemies to the game.
 
 No before you ask moonswept does not add moons.
