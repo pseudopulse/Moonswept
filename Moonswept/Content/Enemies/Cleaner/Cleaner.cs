@@ -20,8 +20,18 @@ namespace Moonswept {
             // fogPrefab = Main.assets.LoadAsset<GameObject>("TheFogHasCome.prefab");
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(Main.assets.LoadAsset<GameObject>("Cleaner.prefab"));
             // NetworkPrefabs.RegisterNetworkPrefab(fogPrefab);
-            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 90, "Spawn weight. Higher is more common.").Value, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
+            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 90, "Spawn weight. Higher is more common.").Value, 
+                Main.config.Bind<Levels.LevelTypes>("TZP Cleaner", "Spawn Locations", Levels.LevelTypes.All, "The moons this enemy can spawn on.").Value
+            , Enemies.SpawnType.Default, tNode, tKeyword);
             // Debug.Log("registered!");
+
+            On.StartOfRound.Awake += KillYourself;
+        }
+
+        private void KillYourself(On.StartOfRound.orig_Awake orig, StartOfRound self)
+        {
+            orig(self);
+            self.drunknessSideEffect.AddKey(6f, 2f);
         }
     }
 
@@ -120,7 +130,7 @@ namespace Moonswept {
         public override void HitEnemy(int force = 1, PlayerControllerB playerWhoHit = null, bool playHitSFX = false, int hitID = -1)
         {
             base.HitEnemy(force, playerWhoHit, playHitSFX, hitID);
-            // Debug.Log("we took damage?");
+            
             StopSearch(currentSearch);
             SwitchToBehaviourState((int)BehaviourState.Retreat);
             initialPos = transform.position;
