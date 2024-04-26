@@ -1,8 +1,8 @@
 ## 0.5.6 
 
-- Fixed cleaner drone TZP being unable to change your pitch
+- Fixed Cleaner TZP being unable to change your pitch
 - Reduced Mobile Turret weight 78 -> 50
-- Reduced cleaner weight 90 -> 75
+- Reduced Cleaner weight 90 -> 75
 
 ## 0.5.5
 
