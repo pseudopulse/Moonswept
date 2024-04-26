@@ -17,7 +17,7 @@ namespace Moonswept {
             tNode = Main.assets.LoadAsset<TerminalNode>("WalkerTurretTN.asset");
             tKeyword = Main.assets.LoadAsset<TerminalKeyword>("WalkerTurretTK.asset");
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(Main.assets.LoadAsset<GameObject>("WalkerTurret.prefab"));
-            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("Mobile Turret", "Weight", 78, "Spawn weight. Higher is more common.").Value, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
+            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("Mobile Turret", "Weight", 50, "Spawn weight. Higher is more common.").Value, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
             // Debug.Log("registered!");
         }
     }
