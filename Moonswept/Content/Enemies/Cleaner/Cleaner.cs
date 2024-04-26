@@ -20,7 +20,7 @@ namespace Moonswept {
             // fogPrefab = Main.assets.LoadAsset<GameObject>("TheFogHasCome.prefab");
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(Main.assets.LoadAsset<GameObject>("Cleaner.prefab"));
             // NetworkPrefabs.RegisterNetworkPrefab(fogPrefab);
-            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 90, "Spawn weight. Higher is more common.").Value, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
+            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 75, "Spawn weight. Higher is more common.").Value, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
             // Debug.Log("registered!");
         }
     }
