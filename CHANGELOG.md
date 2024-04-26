@@ -1,3 +1,9 @@
+## 0.5.6 
+
+- Fixed Cleaner TZP being unable to change your pitch
+- Reduced Mobile Turret weight 78 -> 50
+- Reduced Cleaner weight 90 -> 75
+
 ## 0.5.5
 
 - updated Mobile Turret model courtesy of smxrez
