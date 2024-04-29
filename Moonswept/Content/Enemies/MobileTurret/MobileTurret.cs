@@ -34,6 +34,7 @@ namespace Moonswept {
         private float firingDelay = 0f;
         private bool isDoingGunshots;
         public AudioSource source;
+        public AudioSource seePlayerSource;
         public enum BehaviourState {
             Patrolling,
             Chasing,
@@ -125,7 +126,7 @@ namespace Moonswept {
 
                     break;
                 case (int)BehaviourState.Chasing:
-                    agent.speed = 4f;
+                    agent.speed = 2f;
 
                     if (targetLastSeenAt != Vector3.zero) {
                         SetDestinationToPosition(targetLastSeenAt);
@@ -138,6 +139,8 @@ namespace Moonswept {
                             lockOnTimer = 0f;
                             SwitchToBehaviourState((int)BehaviourState.LockingOn);
                             // Debug.Log("chase -> lock");
+
+                            seePlayerSource.Play();
                         }
 
                         if (!CheckLineOfSightForPosition(targetPlayer.transform.position, 90, 60)) {

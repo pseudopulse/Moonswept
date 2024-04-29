@@ -1,8 +1,10 @@
 ## 0.5.6 
 
-- Fixed Cleaner TZP being unable to change your pitch
 - Reduced Mobile Turret weight 78 -> 50
 - Reduced Cleaner weight 90 -> 75
+- Fixed Cleaning Drone having map-wide audio (again...)
+- Fixed Mobile Turret having really quiet movement sound
+- Made Mobile Turret play a warning sound when it locks onto a target.
 
 ## 0.5.5
 

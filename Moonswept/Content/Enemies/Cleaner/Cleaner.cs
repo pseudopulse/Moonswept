@@ -19,19 +19,53 @@ namespace Moonswept {
             tKeyword = Main.assets.LoadAsset<TerminalKeyword>("CleanerTK.asset");
             // fogPrefab = Main.assets.LoadAsset<GameObject>("TheFogHasCome.prefab");
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(Main.assets.LoadAsset<GameObject>("Cleaner.prefab"));
-            // NetworkPrefabs.RegisterNetworkPrefab(fogPrefab);
+            // Debug.Log("registered!");
+
             Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 75, "Spawn weight. Higher is more common.").Value, 
                 Main.config.Bind<Levels.LevelTypes>("TZP Cleaner", "Spawn Locations", Levels.LevelTypes.All, "The moons this enemy can spawn on.").Value
             , Enemies.SpawnType.Default, tNode, tKeyword);
-            // Debug.Log("registered!");
+
+
+            /*Enemies.RegisterEnemy(enemy, 1, Levels.LevelTypes.None, Enemies.SpawnType.Default, tNode, tKeyword);
+            Enemies.RemoveEnemyFromLevels(enemy);*/
 
             On.StartOfRound.Awake += KillYourself;
+
+            /*string levelsString = Main.config.Bind<string>("TZP Cleaner", "Spawn Locations", "all:75", "The moons this enemy can spawn on, alongside their weight. 'all' correlates to every moon. Format: [moon name]:[weight]").Value;
+            string[] array = levelsString.Split(" ");
+
+            Dictionary<string, int> dict = new();
+
+            foreach (string str in array) {
+                if (str.Contains(":")) {
+                    string[] str2 = str.Split(":");
+                    
+                    if (str2.Length != 2) continue;
+
+                    string moon = str2[0];
+                    int weight = Int32.Parse(str2[1]);
+
+                    Debug.Log(moon);
+                    Debug.Log(weight);
+
+                    if (moon == "all") {
+                        Enemies.RegisterEnemy(enemy, weight, Levels.LevelTypes.All, Enemies.SpawnType.Default, tNode, tKeyword);
+                        return;
+                    }
+
+                    dict.Add(moon, weight);
+                }
+            }
+
+            Enemies.RegisterEnemy(enemy, Enemies.SpawnType.Default, new() {
+                [Levels.LevelTypes.None] = 0
+            }, dict, tNode, tKeyword);*/
         }
 
         private void KillYourself(On.StartOfRound.orig_Awake orig, StartOfRound self)
         {
             orig(self);
-            self.drunknessSideEffect.AddKey(6f, 2f);
+            // self.drunknessSideEffect.AddKey(6f, 2f);
         }
     }
 
@@ -160,7 +194,8 @@ namespace Moonswept {
             
             if (collider.bounds.Contains(controller.playerEye.position)) {
                 controller.increasingDrunknessThisFrame = true;
-                controller.drunknessInertia = Mathf.Clamp(controller.drunknessInertia + Time.fixedDeltaTime / 0.25f * controller.drunknessSpeed, 0.1f, 0.8f);
+                controller.drunknessInertia = Mathf.Clamp(controller.drunknessInertia + Time.fixedDeltaTime / 0.25f * controller.drunknessSpeed, 0.1f, 4.5f);
+                Debug.Log(StartOfRound.Instance.drunknessSideEffect.Evaluate(controller.drunkness));
             }
 
             stopwatch += Time.fixedDeltaTime;
