@@ -1,7 +1,7 @@
 ## 0.5.6 
 
-- Reduced Mobile Turret weight 78 -> 50
-- Reduced Cleaner weight 90 -> 75
+- Reduced Mobile Turret weight 78 -> 60
+- Reduced Cleaner weight 90 -> 80
 - Fixed Cleaning Drone having map-wide audio (again...)
 - Fixed Mobile Turret having really quiet movement sound
 - Made Mobile Turret play a warning sound when it locks onto a target.
