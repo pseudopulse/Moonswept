@@ -54,6 +54,8 @@ Smxrez - Models [![ko-fi](https://i.postimg.cc/kGvcFfm9/64f1a9ddd0246590df69e9ef
 
 Alli - Lore
 
+HIFU - Icon
+
 <details>
   <summary></summary>
 
