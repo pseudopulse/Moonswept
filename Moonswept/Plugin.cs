@@ -10,6 +10,7 @@ using UnityEngine;
 namespace Moonswept
 {
     [BepInPlugin("MoonsweptTeam.Moonswept", "Moonswept", "0.5.0")]
+    [BepInIncompatibility("com.potatoepet.AdvancedCompany")]
     public class Main : BaseUnityPlugin
     {
         public static ConfigFile config;
