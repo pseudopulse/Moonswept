@@ -1,3 +1,16 @@
+## 0.5.8
+- recompile to work on v60
+- removed log spam from cleaning drone
+- mobile turret should stop firing through walls in some spots?
+- mobile turret no longer backs out of lock-on after losing a target
+- mobile turret no longer duplicate plays the sound if it re-acquires a target
+
+## 0.5.7
+
+- Fixed Mobile Turret alert sound being map-wide
+- Fixed Cleaning Drone having map-wide audio (for real this time)
+- Reduced the rate of gain for the TZP of the Cleaning Drone
+
 ## 0.5.6 
 
 - Reduced Mobile Turret weight 78 -> 50

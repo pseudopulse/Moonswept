@@ -194,8 +194,8 @@ namespace Moonswept {
             
             if (collider.bounds.Contains(controller.playerEye.position)) {
                 controller.increasingDrunknessThisFrame = true;
-                controller.drunknessInertia = Mathf.Clamp(controller.drunknessInertia + Time.fixedDeltaTime / 0.25f * controller.drunknessSpeed, 0.1f, 4.5f);
-                Debug.Log(StartOfRound.Instance.drunknessSideEffect.Evaluate(controller.drunkness));
+                controller.drunknessInertia = Mathf.Clamp(controller.drunknessInertia + Time.fixedDeltaTime / 1f * controller.drunknessSpeed, 0.1f, 4.5f);
+                // Debug.Log(StartOfRound.Instance.drunknessSideEffect.Evaluate(controller.drunkness));
             }
 
             stopwatch += Time.fixedDeltaTime;

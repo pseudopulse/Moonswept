@@ -107,13 +107,13 @@ namespace Moonswept {
                 case (int)BehaviourState.LockingOn:
                     agent.speed = 0f;
 
-                    if (!targetPlayer || !CheckLineOfSightForPosition(targetPlayer.transform.position, 360, 60)) {
+                    /*if (!targetPlayer || !CheckLineOfSightForPosition(targetPlayer.transform.position, 360, 60)) {
                         lockOnTimer = 0f;
                         // Debug.Log("no line of sight");
                         SwitchToBehaviourState((int)BehaviourState.Chasing);
                         // Debug.Log("lock -> chase");
                         targetPlayer = null;
-                    }
+                    }*/
 
                     lockOnTimer += AIIntervalTime;
 
@@ -140,7 +140,9 @@ namespace Moonswept {
                             SwitchToBehaviourState((int)BehaviourState.LockingOn);
                             // Debug.Log("chase -> lock");
 
-                            seePlayerSource.Play();
+                            if (!seePlayerSource.isPlaying) {
+                                seePlayerSource.Play();
+                            }
                         }
 
                         if (!CheckLineOfSightForPosition(targetPlayer.transform.position, 90, 60)) {

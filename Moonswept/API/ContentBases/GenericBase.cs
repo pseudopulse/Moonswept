@@ -21,6 +21,7 @@ namespace Moonswept.Utils.ContentBases {
         public ConfigFile config;
 
         public virtual void Initialize() {
+            config = Main.config;
             PostCreation();
         }
 
