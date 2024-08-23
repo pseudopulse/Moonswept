@@ -21,7 +21,7 @@ namespace Moonswept {
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(Main.assets.LoadAsset<GameObject>("Cleaner.prefab"));
             // Debug.Log("registered!");
 
-            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 75, "Spawn weight. Higher is more common.").Value, 
+            Enemies.RegisterEnemy(enemy, Main.config.Bind<int>("TZP Cleaner", "Weight", 80, "Spawn weight. Higher is more common.").Value, 
                 Main.config.Bind<Levels.LevelTypes>("TZP Cleaner", "Spawn Locations", Levels.LevelTypes.All, "The moons this enemy can spawn on.").Value
             , Enemies.SpawnType.Default, tNode, tKeyword);
 
