@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: WelcomeNode
+  m_EditorClassIdentifier:
+  displayText: "BG IG, A System-Act Ally\nCopyright (C) 2084-2108, Halden Electronics Inc.\nCourtesy of the Company.\n\n\n\nBios for FORTUNE-9 87.7/10MHZ SYSTEM\n\nCurrent date is Tue  3-7-2532\nCurrent time is 8:03:32.15\n\nPlease enter favorite animal: "
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 8
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: -1
+  creatureName:
+  storyLogFileID: -1
+  overrideOptions: 0
+  acceptAnything: 1
+  terminalOptions:
+  - noun: {fileID: 0}
+    result: {fileID: 11400000, guid: 25ee0cef59c82814a9734d8923adac19, type: 2}
+  playClip: {fileID: 0}
+  playSyncedClip: -1
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 0}
+  loadImageSlowly: 0
+  persistentImage: 0

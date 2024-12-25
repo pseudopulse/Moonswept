@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: LogFile4
+  m_EditorClassIdentifier:
+  displayText: "date is August 31, 1968. i got camera duty again, i hate walking on this moon anyway. ahah jokes on them it, just started raining!!! Im just sitting. cant sleep on these tiny beds for ants\n\n\nIve been thinking a lot. i think this job is shady. If youre reading this you probbably got here the same as me. the pay is good, the contract only lasts a season. they ran you through their \"assessmennt exam\" on the phone with a weird voice. you signed the contract on the shuttle with the rest of your crew. But the whole time you didnt talk to anyone. The shuttle was autopiloted, I think the voice on the phone was fake.  I;ve had the wrost dreams, I think   I just want to go back home. but im not gonna crawl home, crying and scratching on dad's front door. thats not his son. thats not Sigurd!\n\n"
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: -1
+  creatureName: Shady - Aug 31
+  storyLogFileID: 3
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: -1
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 0}
+  loadImageSlowly: 0
+  persistentImage: 0

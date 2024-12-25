@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: LogFile6
+  m_EditorClassIdentifier:
+  displayText: "we left behiind Rich. we just had one room to check and then we could be done for the day, i couldnt get the door open. And then i looked and Rich wasnt there. It was the fucking wrinkly skin flower head man that walks on two legs! it turned his neck. i heard the crack but he wasnt there. I wanted to find Rich even if he was dead, but they are cowards! their faces are blank like idiots, theres nothing moving in their stupid skulls, all they wanted to do is leave. they were going to leave me too. we all hated Rich but we didnt want this. this isnt worth it, its just not worth it. we got a pair of scissors, a box full of stamps and a bundle of cords to sell for nothing. its not wort h it, what does the company even want it for?\n\n\nthe date we last saw Rich is September 7, 1968\n\n"
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: -1
+  creatureName: Goodbye - Sep 7
+  storyLogFileID: 5
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: -1
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 0}
+  loadImageSlowly: 0
+  persistentImage: 0

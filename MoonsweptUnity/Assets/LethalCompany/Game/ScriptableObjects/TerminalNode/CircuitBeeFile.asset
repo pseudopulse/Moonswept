@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: CircuitBeeFile
+  m_EditorClassIdentifier:
+  displayText: "Circuit Bees\n\nSigurd's danger level: 90%\n\nScientific name: Crabro-coruscus\nThe circuit bee, also known as red bee, is a eusocial flying insect of the genus Apis, a descendent of the honey bee. Their appearance is quite recognizable from their hairy, red bodies and two sets of wings. Like their ancestors, they are well-known for their intelligent social BEEhavior, large colony size, building wax nests which they use to store honey, and their important role in pollination. Unlike the honey bee, which often chose high places such as trees to construct its hive, red bees create their hives on the ground.\n\nRed bees are highly defensive. They will leave the nest to attack any creature that comes within several meters, leaving BEEhind only the queen and drone bees. This bold BEEhavior is enabled by their most defining aBEElity, which is their electrostatic charge. Red bees produce friction with the air. They also produce friction by rubbing their two pairs of wings against each other and by rubbing against one another while in the hive. What allows them to create such a surplus of electric field compared to the honey bee is still under research, as they generate a stronger electric field when panicked or angered. This ability is especially useful for them around water.\n\n\n\nIt's BEEst to keep your distance. If a red bee hive is stolen, red bee swarms will enter an onslaught in which they attack any living creature. This destructive BEEhavior will last until they have located the hive or completely exhausted themselves, which can take hours to days. They have BEEn known to leave BEEhind fields of bodies of small rodents, insects and even some larger mammals, and in rare cases they can start fires. Their strong BEEnefits and drawbacks to their ecosystems are highly debated. BEEbated !! - the indomitable Sigurd"
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: 14
+  creatureName: Circuit bees
+  storyLogFileID: -1
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: 2
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 0}
+  loadImageSlowly: 1
+  persistentImage: 0

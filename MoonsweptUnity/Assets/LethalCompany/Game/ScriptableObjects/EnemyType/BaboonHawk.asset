@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1afe386f68a39421854af5aa1d38665, type: 3}
+  m_Name: BaboonHawk
+  m_EditorClassIdentifier:
+  enemyName: Baboon hawk
+  probabilityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spawningDisabled: 0
+  numberSpawnedFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.14812775
+      outSlope: -0.14812775
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.40794012
+    - serializedVersion: 3
+      time: 0.09296865
+      value: 1.7755553
+      inSlope: 8.448339
+      outSlope: 8.448339
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.51274943
+    - serializedVersion: 3
+      time: 0.20870587
+      value: 2.3146265
+      inSlope: -6.6556735
+      outSlope: -6.6556735
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6643663
+      outWeight: 0.1807706
+    - serializedVersion: 3
+      time: 0.31123316
+      value: 1.5879598
+      inSlope: -6.822328
+      outSlope: -6.822328
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.51559556
+      value: 0.7506728
+      inSlope: -2.915006
+      outSlope: -2.915006
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.22144727
+      outWeight: 0.18779925
+    - serializedVersion: 3
+      time: 1
+      value: 0.21860312
+      inSlope: -0.68870384
+      outSlope: -0.68870384
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.27210423
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  useNumberSpawnedFalloff: 1
+  spawnInGroupsOf: 2
+  requireNestObjectsToSpawn: 0
+  enemyPrefab: {fileID: 1130230978765967, guid: f67a0de40bc372d46b4fcc6dea1b9134, type: 2}
+  PowerLevel: 0.5
+  MaxCount: 15
+  numberSpawned: 4
+  nestsSpawned: 1
+  isOutsideEnemy: 1
+  isDaytimeEnemy: 0
+  normalizedTimeInDayToLeave: 1
+  stunTimeMultiplier: 0.4
+  doorSpeedMultiplier: 0.1
+  stunGameDifficultyMultiplier: 0.4
+  canBeStunned: 1
+  canDie: 1
+  destroyOnDeath: 0
+  canSeeThroughFog: 0
+  pushPlayerForce: 0.16
+  pushPlayerDistance: 1.26
+  SizeLimit: 0
+  timeToPlayAudio: 15
+  loudnessMultiplier: 1
+  overrideVentSFX: {fileID: 0}
+  nestSpawnPrefab: {fileID: 1344250470300481, guid: a0206987c6f200748a1ba3df15474f68, type: 2}
+  nestSpawnPrefabWidth: 2
+  useMinEnemyThresholdForNest: 1
+  minEnemiesToSpawnNest: 3
+  hitBodySFX: {fileID: 8300000, guid: d4e66ae12173cd545af2491a57d3c3f8, type: 3}
+  hitEnemyVoiceSFX: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 739bc1e1f501d524cb73354dbb139a33, type: 3}
+  stunSFX: {fileID: 0}
+  miscAnimations:
+  - AnimString: caw
+    AnimVoiceclip: {fileID: 8300000, guid: ca10239327bfffd44b1fe27c8dad95a3, type: 3}
+    AnimLength: 0.5
+    priority: 0
+  audioClips:
+  - {fileID: 8300000, guid: 48af56305a547b746a95d1a102dd442c, type: 3}
+  - {fileID: 8300000, guid: f12d227e4c62b554ebb482af23b895d9, type: 3}
+  - {fileID: 8300000, guid: dd7112884b065d64da78d2a9c751a28a, type: 3}
+  - {fileID: 8300000, guid: 01637235f992cc4439ba04c78bf8597e, type: 3}
+  - {fileID: 8300000, guid: f62b53df9e10f5f47b55ec151784ad17, type: 3}
+  - {fileID: 8300000, guid: 94a293ecb38a7494281c5f754e6e4db7, type: 3}

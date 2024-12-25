@@ -1,0 +1,12 @@
+{
+  "namespace": "Hamunii",
+  "name": "TestingLib",
+  "description": "A library that implements methods to help with testing.",
+  "version_number": "1.2.0",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100",
+    "Evaisa-HookGenPatcher-0.0.5"
+  ],
+  "website_url": "https://github.com/Hamunii/TestingLib",
+  "FullName": "Hamunii-TestingLib"
+}

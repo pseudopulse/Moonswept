@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: SnowyFog
+  m_EditorClassIdentifier:
+  components:
+  - {fileID: 11400000, guid: 92f1aeb5c517d244bb51f83938690350, type: 2}
+  - {fileID: 11400000, guid: e322aa79683dcac4aba02aeb65d588e7, type: 2}
+  - {fileID: 11400000, guid: 04b792e13c559d64faba280c532bb0f9, type: 2}
+  - {fileID: 11400000, guid: 3cdd12012e64798449d9211eea519e9d, type: 2}
+  - {fileID: 11400000, guid: ed8279a2ce7733444a2d3329b0757c1a, type: 2}

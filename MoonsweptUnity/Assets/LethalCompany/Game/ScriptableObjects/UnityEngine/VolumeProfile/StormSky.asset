@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: StormSky
+  m_EditorClassIdentifier:
+  components:
+  - {fileID: 11400000, guid: ce2409a06f91db34d9a2721fe5b4f48c, type: 2}
+  - {fileID: 11400000, guid: 3d1be52e9b2cce746b8732b8cb1c1fa0, type: 2}
+  - {fileID: 11400000, guid: ed193913fb7ffab4fa45104bff812f84, type: 2}
+  - {fileID: 11400000, guid: a634162c3aaf74f4597278cd982caa40, type: 2}
+  - {fileID: 11400000, guid: 6b4d9dd00c32db949b30705159fcc046, type: 2}
+  - {fileID: 11400000, guid: 5a5b7bfa8e4b9e743a0f42e48edb5494, type: 2}

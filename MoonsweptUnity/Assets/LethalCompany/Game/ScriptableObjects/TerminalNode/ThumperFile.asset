@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: ThumperFile
+  m_EditorClassIdentifier:
+  displayText: "Thumpers\n\nSigurd's danger level: 90%\n\nScientific name: Pistris-saevus\nHalves, or Thumpers, are a highly aggressive, carnivorous species of the order Chondrichthyes. Their skeletons are cartilaginous, giving their bodies a stretchy and rubbery quality. They must eat their bottom legs in order to escape the shell of their hatched egg; their bottom legs are hardly functional to begin with. Their arms, or front legs, are very strong, and they occasionally use them to stomp prey. They can reach great speeds in a straight line.\n\nThey are relentless hunters, typically at the top of their food chain. Their main weaknesses are their intelligence and complete lack of hearing. If you come across a thumper, your best means of survival are leaving its line of sight, as it is slower around corners and can't easily track prey.\n\nDue to the fast and volatile evolution of this species, some theorize that thumpers are one of the examples of an increased number of mutations causing higher levels of speciation in planets around the Thistle Nebula."
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: 2
+  creatureName: Thumpers
+  storyLogFileID: -1
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: 2
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 32900000, guid: 8a48aa73d185e16499329531b94c1363, type: 3}
+  loadImageSlowly: 1
+  persistentImage: 0

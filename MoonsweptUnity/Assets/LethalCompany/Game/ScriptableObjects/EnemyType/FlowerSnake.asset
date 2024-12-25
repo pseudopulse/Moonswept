@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1afe386f68a39421854af5aa1d38665, type: 3}
+  m_Name: FlowerSnake
+  m_EditorClassIdentifier:
+  enemyName: Tulip Snake
+  probabilityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.6407776
+      inSlope: 0.111742325
+      outSlope: 1.2414768
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.2893509
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1623237
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spawningDisabled: 0
+  numberSpawnedFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0015411377
+      value: 1.0048676
+      inSlope: 0.055871747
+      outSlope: 1.6588721
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.55458134
+    - serializedVersion: 3
+      time: 0.2704928
+      value: 2.2098398
+      inSlope: -0.96806836
+      outSlope: -0.96806836
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26130995
+      outWeight: 0.12343448
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -6.841486
+      outSlope: -6.841486
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19115993
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  useNumberSpawnedFalloff: 1
+  spawnInGroupsOf: 4
+  requireNestObjectsToSpawn: 0
+  enemyPrefab: {fileID: 1428351100418176, guid: e58151b28c1731f4997a9115d0bcdaf9, type: 2}
+  PowerLevel: 0.5
+  MaxCount: 12
+  numberSpawned: 4
+  nestsSpawned: 0
+  isOutsideEnemy: 1
+  isDaytimeEnemy: 1
+  normalizedTimeInDayToLeave: 0.52
+  stunTimeMultiplier: 1
+  doorSpeedMultiplier: 0.3
+  stunGameDifficultyMultiplier: 0.7
+  canBeStunned: 0
+  canDie: 1
+  destroyOnDeath: 0
+  canSeeThroughFog: 0
+  pushPlayerForce: 0.16
+  pushPlayerDistance: 1.26
+  SizeLimit: 0
+  timeToPlayAudio: 15
+  loudnessMultiplier: 1
+  overrideVentSFX: {fileID: 0}
+  nestSpawnPrefab: {fileID: 0}
+  nestSpawnPrefabWidth: 2
+  useMinEnemyThresholdForNest: 0
+  minEnemiesToSpawnNest: 0
+  hitBodySFX: {fileID: 0}
+  hitEnemyVoiceSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
+  stunSFX: {fileID: 0}
+  miscAnimations: []
+  audioClips:
+  - {fileID: 8300000, guid: cbeab9ce6344fc64b8e39591ec1f7325, type: 3}
+  - {fileID: 8300000, guid: 3fed1d7388d192b4a801ade8aaf5bf64, type: 3}
+  - {fileID: 8300000, guid: 5c12facb8bd2b9b42a2dbffe13b99f79, type: 3}
+  - {fileID: 8300000, guid: 76ab46ee36a66214cba84c8107f7f72e, type: 3}
+  - {fileID: 8300000, guid: edc7c94dbd1aba3428b2798ba4a1e6ff, type: 3}
+  - {fileID: 8300000, guid: 56bdbd7160ccad043836b97b986bbe8d, type: 3}
+  - {fileID: 8300000, guid: a763a351bc98fbd45a27f7be2594d272, type: 3}
+  - {fileID: 8300000, guid: 260d549f53a4b18419f99763a89a3d1c, type: 3}
+  - {fileID: 8300000, guid: 63b313efa4a69b74bb3643d5fdc43a71, type: 3}
+  - {fileID: 8300000, guid: 7b0cdfe56d6c6e7478c9d91fad513cdb, type: 3}
+  - {fileID: 8300000, guid: 8e876611cbdeadc4eb8e0a57783a23a8, type: 3}

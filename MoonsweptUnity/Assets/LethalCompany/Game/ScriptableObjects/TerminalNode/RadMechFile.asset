@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: RadMechFile
+  m_EditorClassIdentifier:
+  displayText: "OLD BIRDS\n\n The Old Bird is an autonomous, offensive weapon of war with a humanoid design. Measured at 19 feet tall and 11 feet wide, its two most defining visual features are the spotlight positioned on its head, capable of emitting 100,000 lumens, and the long-range acoustic device on its chest, sometimes referred to as a sound cannon. There are additional speakers on its shoulders used to broadcast sound a long distance. The Old Bird's left arm is a claw, and its right arm is a nozzle capable of both launching rocket-propelled grenades and torching at close-range with a very hot flame. Old Birds are one of the first extra-orbital weapons to be used and mass-produced.\r\n The subject of who developed the Old Birds has been an intense debate since their first recorded appearance on\n\nThe design of the Old Bird, down to the tempering of metals, appears intended to conceal its origin. It has been called the \"walking ransom letter.\" \r\n Old Birds' legs function as rockets, which allows them to travel long distances and find targets efficiently. But the most likely reason this feature exists is to help them enter and land from orbit. The material and fuel Old Birds rely on is similar to those of passenger space craft from around 2130.\r\nOld Birds land and stay at their target planet forever. Although they often have more than enough fuel for just one trip, no behavior has been found in their programming which suggests they could choose to \"migrate\". Still, there are unverified accounts of Old Birds travelling autonomously to a new planet after hundreds of years of dormancy. \r\nThe Old Bird was historically referred to as the \"Al\", based off the code name it was given by the English military, the \"A16-L31\". In 2384, however, the song \"Old Birds\" released as a cult hit by the post-punk project Under Remora; just three years later, in his most famous work of the same name, street artist Land Eyrie depicted the automotons flying and landing between planets in an arrangement similar to a flock of geese--this is generally considered one of the most iconic and influential images of modern culture and solidified the modern nickname.\r\n In 2356, 5-Embrion was classified as Condemned for the purposes of travel or settlement by the Boat; Old Birds were described by witness accounts as \"lining the horizon\". Though to this day they appear inoperative, there is a reasonable risk that many are still in sleep mode, so the planet will likely keep its status. The small moon was likely used as a testing ground for the Old Bird's flying and landing capabilities."
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: 18
+  creatureName: Old birds
+  storyLogFileID: -1
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: 2
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 32900000, guid: 84e8979c96398724a9badcc79e56e47f, type: 3}
+  loadImageSlowly: 1
+  persistentImage: 0

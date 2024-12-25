@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: HygrodereFile
+  m_EditorClassIdentifier:
+  displayText: "HYGRODERE\n\nSigurd's danger level: 0%, if you're faster than a snail!\n\nScientific name: Hygrodere \nA eukaryotic organism classified within the paraphyletic group Prostita. With the incredible speed of reproduction, these small organisms can multiply to millions. Hygrodere rarely split apart, instead choosing to form large, viscous masses which can take up large amounts of space and become a danger to deal with, requiring large tools or lures to relocate.\n\nHygrodere are drawn to heat and oxygen and can detect it from seemingly anywhere. There's almost nothing organic they can't convert to their own body mass. Nothing has been found to poison them. Constantly replacing themselves, they can persist for hundreds of thousands of years. If you ever find yourself cornered, find a tall object to stand on top of; hygroderes have trouble climbing. they have great taste! cause I made a friend with one somehow,, and we think it was my music. \n"
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: 5
+  creatureName: Hygroderes
+  storyLogFileID: -1
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: 2
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 32900000, guid: 7cbf22305eedaff4d9584984938404e9, type: 3}
+  loadImageSlowly: 1
+  persistentImage: 0

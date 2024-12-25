@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2653a32f669f1837fb048df0847fecf0, type: 3}
+  m_Name: TestAllEnemies
+  m_EditorClassIdentifier:
+  planetPrefab: {fileID: 1207175646278784, guid: b0dd4b1fd6ab2b1408c17565db640811, type: 2}
+  sceneName: IntroScene2
+  levelID: -1
+  lockedForDemo: 0
+  spawnEnemiesAndScrap: 1
+  PlanetName:
+  LevelDescription: For testing purposes
+  videoReel: {fileID: 0}
+  riskLevel: 1
+  timeToArrive: 5
+  OffsetFromGlobalTime: 0
+  DaySpeedMultiplier: 1
+  planetHasTime: 1
+  randomWeathers: []
+  overrideWeather: 0
+  overrideWeatherType: 0
+  currentWeather: 0
+  factorySizeMultiplier: 0
+  dungeonFlowTypes: []
+  spawnableMapObjects: []
+  spawnableOutsideObjects: []
+  spawnableScrap:
+  - spawnableItem: {fileID: 11400000, guid: 8812368d82b1d8c43a3fdde5f5165f9e, type: 2}
+    rarity: 23
+  - spawnableItem: {fileID: 11400000, guid: 5e363c05307a1c840aa732eaba06e064, type: 2}
+    rarity: 22
+  - spawnableItem: {fileID: 11400000, guid: cd1b4dbf23364cb41a14298d4a4418e9, type: 2}
+    rarity: 100
+  - spawnableItem: {fileID: 11400000, guid: 9821e26d8af4f2643a49f069741077c2, type: 2}
+    rarity: 24
+  minScrap: 7
+  maxScrap: 14
+  minTotalScrapValue: 80
+  maxTotalScrapValue: 450
+  levelAmbienceClips: {fileID: 0}
+  maxEnemyPowerCount: 8
+  maxOutsideEnemyPowerCount: 15
+  maxDaytimeEnemyPowerCount: 20
+  Enemies:
+  - enemyType: {fileID: 11400000, guid: 460e240147e15e1469d3c336047be894, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: 3c2f0fcf57259dc48ae78d0eaac8ce90, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: eee65214942ca6845a419a74ad4f0d20, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: 95a85444c309e9c4cb4c9c4e7e2a9325, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: de26b4c203a4ca94b831d7c10a703c53, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: 0de8e3fee000b2d43aed8e54826422d6, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: fe77881b7fb1f664f8fa095054e32677, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: fe77881b7fb1f664f8fa095054e32677, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: 3a3b094a4c196084f8337d76dcff26f4, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: e40ca061bed631c4d9b875b444c75f5c, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: fe77881b7fb1f664f8fa095054e32677, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: f452aab3a10bb2241b8945a54225275f, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: f7e91523aae63914b9be313fb1c87e30, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: ab2d958efe93b0d41a5354bb7e71eb06, type: 2}
+    rarity: 100
+  - enemyType: {fileID: 11400000, guid: d51a825eda6fdf84da096b4b1ffe75da, type: 2}
+    rarity: 100
+  OutsideEnemies:
+  - enemyType: {fileID: 11400000, guid: a2fe2337c1f322944a88e649f83a692a, type: 2}
+    rarity: 0
+  - enemyType: {fileID: 11400000, guid: f28aef6b28c998a4eb30bdfb74db39a3, type: 2}
+    rarity: 0
+  - enemyType: {fileID: 11400000, guid: 24777f7b375f9b840b7263a6ec743a8c, type: 2}
+    rarity: 0
+  - enemyType: {fileID: 11400000, guid: b3c745d458b84af418ef0b04e4f5dff0, type: 2}
+    rarity: 0
+  - enemyType: {fileID: 11400000, guid: 52be922dae073624982d7ab8fab2aeb8, type: 2}
+    rarity: 0
+  DaytimeEnemies:
+  - enemyType: {fileID: 11400000, guid: b79e194a9619f8348b4f5188aec860d7, type: 2}
+    rarity: 0
+  - enemyType: {fileID: 11400000, guid: a9cf934d3533aae41b574b3ecd4adef3, type: 2}
+    rarity: 0
+  - enemyType: {fileID: 11400000, guid: 887541389613de2468215f88bcf28461, type: 2}
+    rarity: 0
+  - enemyType: {fileID: 11400000, guid: 34c46e71266b3e44a8a3071bdde95763, type: 2}
+    rarity: 0
+  enemySpawnChanceThroughoutDay:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -3
+      inSlope: 9.235582E-07
+      outSlope: 9.235582E-07
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.09318928
+    - serializedVersion: 3
+      time: 0.18773878
+      value: 0.027917624
+      inSlope: 1.5065547
+      outSlope: 1.5065547
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.490326
+      outWeight: 0.14603217
+    - serializedVersion: 3
+      time: 0.75938845
+      value: 4.9730015
+      inSlope: 0.17118536
+      outSlope: 0.17118536
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.4020014
+      outWeight: 0.5360636
+    - serializedVersion: 3
+      time: 1
+      value: 15
+      inSlope: 35.604027
+      outSlope: 35.604027
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 0.04912584
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  outsideEnemySpawnChanceThroughDay:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -7.7369623E-07
+      value: -3.000003
+      inSlope: -1.8264402
+      outSlope: -1.8264402
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.27606204
+    - serializedVersion: 3
+      time: 0.25709888
+      value: -2.8750572
+      inSlope: 5.843057
+      outSlope: 5.843057
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.38358054
+      outWeight: 0.31270176
+    - serializedVersion: 3
+      time: 0.31574818
+      value: -0.56749916
+      inSlope: 8.836096
+      outSlope: 8.836096
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.35150555
+      outWeight: 0.39248097
+    - serializedVersion: 3
+      time: 1
+      value: 15
+      inSlope: 147.48798
+      outSlope: 147.48798
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 0.060124893
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  daytimeEnemySpawnChanceThroughDay:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spawnProbabilityRange: 4
+  daytimeEnemiesProbabilityRange: 10
+  levelIncludesSnowFootprints: 0
+  levelIconString:

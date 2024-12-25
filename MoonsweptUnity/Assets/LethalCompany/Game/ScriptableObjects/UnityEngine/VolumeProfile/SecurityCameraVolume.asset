@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: SecurityCameraVolume
+  m_EditorClassIdentifier:
+  components:
+  - {fileID: 11400000, guid: 4005124dc85322d46a62360fdf8e38e3, type: 2}
+  - {fileID: 11400000, guid: 0e74f2f398311b3468f9d41970b51ebf, type: 2}
+  - {fileID: 11400000, guid: f53581617aa467440a1c91aa96692437, type: 2}
+  - {fileID: 11400000, guid: 28fe1c29ea28ee948af74f0899c87aae, type: 2}
+  - {fileID: 11400000, guid: edee054f28420d8408073c6c409a205e, type: 2}
+  - {fileID: 11400000, guid: 844ba8310386238499a8e449b65dc875, type: 2}
+  - {fileID: 11400000, guid: 6de401fafe2838c46a56553eb3bcc32c, type: 2}
+  - {fileID: 11400000, guid: ae202decf0b2e9541bfe4561959f42e4, type: 2}
+  - {fileID: 11400000, guid: db507f60603b0364890db82e19b68760, type: 2}
+  - {fileID: 11400000, guid: e12b4b52fd0541e4d84de07184f6120a, type: 2}

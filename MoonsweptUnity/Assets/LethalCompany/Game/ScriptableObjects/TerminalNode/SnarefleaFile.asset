@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: SnarefleaFile
+  m_EditorClassIdentifier:
+  displayText: "SNARE FLEA\n\nSigurd's danger level: 30%\n\nScientific name: Dolus-scolopendra. \nA very large arthropod of the class chilopoda. Its body produces a silk which it primarily uses to propel itself to places where it is concealed. Its exoskeleton is somewhat fragile, and they can die from long falls. The snare flea does not produce venom, nor does it have a strong bite. It makes up for this weakness with its ability to tighten itself around large prey to suffocate.\n\nThe snare flea thrives in dark, warm areas. It cannot survive low temperatures and generally avoids open air and sunlight take the rats outside or just beat the hell otu of them! i think their insides could make a good milkshake,,\n\n"
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: 0
+  creatureName: Snare fleas
+  storyLogFileID: -1
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: 2
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 32900000, guid: c6a4849cf9e1b814692c5af8b21f4b17, type: 3}
+  loadImageSlowly: 1
+  persistentImage: 0

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9ed8654fc7eb7538fe0c0aef954ea3, type: 3}
+  m_Name: LogFile5
+  m_EditorClassIdentifier:
+  displayText: "i got woken up early this morning because we were going to the company building to sell our useless garbage. The rate was 120% which Desmond says is rare and he didnt want to miss it, hes been watching it like the stupid stocks. \n\nit still sucks here, Rich still smells like a piece of hsit .i can barely sleep. i heard the wrorst sound behind the wall of the company building, it sounded like crying red faces all churned up and swept away by concrete, like the pestle and bowl my mom crushes up her seeds and spices in. i still hear it. Its a nightmare. no one else heard it. they dont know what to do. Jess thinks i;m \"home sick,\" no im sick of this cheap suit\r\ndate: Septermber 4, 1968\n\n"
+  terminalEvent:
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  isConfirmationNode: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  lockedInDemo: 0
+  shipUnlockableID: -1
+  buyUnlockable: 0
+  returnFromStorage: 0
+  itemCost: 0
+  creatureFileID: -1
+  creatureName: Sound behind the wall - Sep 4
+  storyLogFileID: 4
+  overrideOptions: 0
+  acceptAnything: 0
+  terminalOptions: []
+  playClip: {fileID: 0}
+  playSyncedClip: -1
+  displayTexture: {fileID: 0}
+  displayVideo: {fileID: 0}
+  loadImageSlowly: 0
+  persistentImage: 0

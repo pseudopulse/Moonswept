@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Sky and Fog Settings Profile
+  m_EditorClassIdentifier:
+  components:
+  - {fileID: 11400000, guid: 650a9219c857b5345869bd4a5f571f65, type: 2}
+  - {fileID: 11400000, guid: fc70d12c13a408743a579dd57615b719, type: 2}
+  - {fileID: 11400000, guid: 945581f1a2f85b14983614801d525888, type: 2}
+  - {fileID: 11400000, guid: ad510a72a54c7444d9eff57be724a023, type: 2}
+  - {fileID: 11400000, guid: a3b188fc27d36b14b9744f1c7001d29f, type: 2}
+  - {fileID: 11400000, guid: 291835f6385f25c43b41b0209dfafb4b, type: 2}

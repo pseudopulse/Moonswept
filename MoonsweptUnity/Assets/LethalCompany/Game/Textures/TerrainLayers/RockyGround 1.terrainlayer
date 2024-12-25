@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1953259897 &1953259897
+TerrainLayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RockyGround 1
+  m_DiffuseTexture: {fileID: 2800000, guid: efde2bba2cdda8647a7a95f295192c44, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 2024861ec70f6054a8a234f14e9237d3, type: 3}
+  m_MaskMapTexture: {fileID: 2800000, guid: bc4bee9079acdcc4ba9af828fef03b4f, type: 3}
+  m_TileSize: {x: 13, y: 13}
+  m_TileOffset: {x: 0, y: 0}
+  m_Specular: {r: 1, g: 1, b: 1, a: 0}
+  m_Metallic: 0.433
+  m_Smoothness: 0.375
+  m_NormalScale: 3.76
+  m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
+  m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}
+  m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
+  m_MaskMapRemapMax: {x: 0, y: 0.0087662935, z: 1, w: 0.017532349}

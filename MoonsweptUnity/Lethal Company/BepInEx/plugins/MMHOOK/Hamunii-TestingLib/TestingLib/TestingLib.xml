@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestingLib</name>
+    </assembly>
+    <members>
+        <member name="T:TestingLib.Helper">
+            <summary>
+            Methods that can be helpful, but do nothing by themselves.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Helper.ListAllEnemies(System.Boolean)">
+            <summary>
+            Lists all enemies in current level.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Helper.ListAllItems(System.Boolean)">
+            <summary>
+            Lists all items.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Instances">
+            <summary>
+            Contains instances of some things in the game. 
+            </summary>
+        </member>
+        <member name="F:TestingLib.Instances.QMM_Instance">
+            <summary>
+            Instance of Quick Menu Manager.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Enemy">
+            <summary>
+            Helpful methods for making debugging of enemies easier.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Enemy.DrawPath(UnityEngine.LineRenderer,UnityEngine.AI.NavMeshAgent)">
+            <summary>
+            Draws the NavMeshAgent's pathfinding. Should be used in `DoAIInterval()`. Do note that you need to add line renderer in your enemy prefab.
+            </summary>
+            <param name="line"></param>
+            <param name="agent"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestingLib.Execute">
+            <summary>
+            Contains actions that can be executed.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Execute.ToggleTestRoom">
+            <summary>
+            Toggles the testing level from the debug menu.<br/>
+            Requires <c>Patch.IsEditor</c> to be active for this to work.
+            <br/><br/>
+            Should be ran on <c>OnEvent.PlayerSpawn</c> or later.
+            </summary>
+        </member>
+        <member name="T:TestingLib.OnEvent">
+            <summary>
+            Contains Events that can be subscribed to.
+            </summary>
+        </member>
+        <member name="E:TestingLib.OnEvent.PlayerSpawn">
+            <summary>
+            Event for when player spawns.
+            <br/><br/>
+            Called on <c>On.GameNetcodeStuff.PlayerControllerB.SpawnPlayerAnimation</c>.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Patch">
+            <summary>
+            Contains methods that patch various things in the game.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.IsEditor">
+            <summary>
+            Patches the game to think it is running in Unity Editor, allowing us to use the in-game debug menu.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.InfiniteSprint">
+            <summary>
+            Patches the game to allow infinite sprinting by always setting SprintMeter to full.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.SkipSpawnPlayerAnimation">
+            <summary>
+            Skips the spawn player animation so you can start moving and looking around as soon as you spawn.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.OnDeathHeal">
+            <summary>
+            Instead of dying, set health to full instead.
+            <br/><br/>
+            This helps with testing taking damage from your enemy, without death being a concern.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.MovementCheat">
+            <summary>
+            Allows jumping at any moment and by performing a double jump, the movement will become much<br/>
+            faster and a lot more responsive, and running will also increase jump height and gravity.
+            <br/><br/>
+            <b>Note:</b> This completely overrides PlayerControllerB's <c>Jump_performed()</c> method.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.InfiniteCredits">
+            <summary>
+            Credits get always set to <c>100 000 000</c>.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.InfiniteShotgunAmmo">
+            <summary>
+            Skips the check for ammo when using the shotgun.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.PatchAll">
+            <summary>
+            Calls all methods in <c>TestingLib.Patch</c>:
+            <br/>
+            <br/><c>Patch.IsEditor()</c>
+            <br/><c>Patch.SkipSpawnPlayerAnimation()</c>
+            <br/><c>Patch.OnDeathHeal()</c>
+            <br/><c>Patch.MovementCheat()</c>
+            <br/><c>Patch.InfiniteSprint()</c>
+            <br/><c>Patch.InfiniteCredits()</c>
+            <br/><c>Patch.InfiniteShotgunAmmo()</c>
+            </summary>
+        </member>
+        <member name="M:TestingLib.Patch.UnpatchAll">
+            <summary>
+            Unpatches all applied patches.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Tools">
+            <summary>
+            Contains helpful methods for testing.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Tools.TeleportLocation">
+            <summary>
+            Specify the Teleport Location in the test level.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Tools.TeleportLocation.Inside">
+            <summary>
+            Teleports you inside the testing maze.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Tools.TeleportLocation.Outside">
+            <summary>
+            Teleports you outside in the testing level.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Tools.TeleportSelf(TestingLib.Tools.TeleportLocation)">
+            <summary>
+            Teleports you to the location specified in the test level.
+            <br/><br/>
+            Valid values are: <c>TeleportLocation.Inside = 1</c>, <c>TeleportLocation.Outside = 2</c>
+            </summary>
+            <param name="location"></param>
+        </member>
+        <member name="M:TestingLib.Tools.TeleportSelfToEntrance">
+            <summary>
+            Teleport yourself to entrance.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Tools.SpawnEnemyInFrontOfSelf(System.String)">
+            <summary>
+            Will find the enemy by name, and spawn it.<br/>
+            If name is invalid, prints all valid enemy names to console.
+            </summary>
+            <param name="enemyName"></param>
+        </member>
+        <member name="M:TestingLib.Tools.GiveItemToSelf(System.String)">
+            <summary>
+            Will find item by name, and give it to your inventory.<br/>
+            If name is invalid, prints all valid item names to console.
+            </summary>
+        </member>
+        <member name="M:TestingLib.Tools.RunAllPatchAndExecuteMethods">
+            <summary>
+            Runs all methods in <c>TestingLib.Patch</c> and <c>TestingLib.Execute</c>:
+            <br/>
+            <br/><c>Patch.IsEditor()</c>
+            <br/><c>Patch.SkipSpawnPlayerAnimation()</c>
+            <br/><c>Patch.OnDeathHeal()</c>
+            <br/><c>Patch.MovementCheat()</c>
+            <br/><c>Patch.InfiniteSprint()</c>
+            <br/><c>Patch.InfiniteCredits()</c>
+            <br/><c>Patch.InfiniteShotgunAmmo()</c>
+            <br/><c>Execute.ToggleTestRoom()</c> // runs on <c>OnEvent.PlayerSpawn</c>
+            </summary>
+        </member>
+        <member name="T:TestingLib.Attributes">
+            <summary>
+            Attributes for TestingLib.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Attributes.Visibility">
+            <summary>
+            Visibility to DevTools.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Attributes.Visibility.Whitelist">
+            <summary>
+            Will be fetched by DevTools.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Attributes.Visibility.Blacklist">
+            <summary>
+            Will not be fetched by DevTools.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Attributes.Visibility.MenuOnly">
+            <summary>
+            Shows only on the DevTools menu.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Attributes.Visibility.ConfigOnly">
+            <summary>
+            Appears in the config, but not the DevTools menu.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Attributes.Available">
+            <summary>
+            Time until can be executed.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Attributes.Available.Always">
+            <summary>
+            Can be executed right away.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Attributes.Available.PlayerSpawn">
+            <summary>
+            Can be executed after player has spawned.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Attributes.DevTools">
+            <summary>
+            Visiblity to DevTools.
+            </summary>
+        </member>
+        <member name="P:TestingLib.Attributes.DevTools.Visibility">
+            <summary>
+            Value of Visiblity.
+            </summary>
+        </member>
+        <member name="P:TestingLib.Attributes.DevTools.Time">
+            <summary>
+            The specified time a method can be executed.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Lookup">
+            <summary>
+            Get the names of items and enemies in the vanilla game without having to look them up.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Lookup.Item">
+            <summary>
+            Names of items.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Lookup.EnemyInside">
+            <summary>
+            Names of inside enemies.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Lookup.EnemyOutside">
+            <summary>
+            Names of outside enemies.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Lookup.EnemyDaytime">
+            <summary>
+            Names of daytime Enemies.
+            </summary>
+        </member>
+        <member name="T:TestingLib.Plugin">
+            <summary>
+            Plugin class.
+            </summary>
+        </member>
+        <member name="F:TestingLib.Plugin.ModGUID">
+            <summary>
+            The Mod GUID of TestingLib.
+            </summary>
+        </member>
+    </members>
+</doc>
