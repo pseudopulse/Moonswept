@@ -13,7 +13,7 @@ $manifest = @{
     version_number = $version
     website_url = ""
     description = $description
-    dependencies = @("BepInEx-BepInExPack-5.4.2100")
+    dependencies = @("BepInEx-BepInExPack-5.4.2100", "TestAccount666-TestAccountCore-1.13.0", "Evaisa-LethalLib-0.16.2")
 } | ConvertTo-Json
 
 # Write JSON content to manifest file
