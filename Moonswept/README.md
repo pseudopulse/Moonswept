@@ -1,8 +1,6 @@
 # Moonswept
 
-### Does not work on v49 or below
-
-Moonswept is an in-dev enemy mod that adds 2 new enemies to the game.
+Moonswept is an in-dev content mod that adds 2 new enemies to the game.
 
 No before you ask moonswept does not add moons.
 
@@ -50,12 +48,11 @@ The exterior of the machine seems to be identical to the stationary turrets we f
 
 Pseudopulse - Programming, Models
 
-Smxrez -
-Models [![ko-fi](https://i.postimg.cc/kGvcFfm9/64f1a9ddd0246590df69e9ef-ko-fi-logo-02-p-500-2.png)](https://ko-fi.com/smxrez)
+TestAccount666 - Programming [![ko-fi](https://i.postimg.cc/kGvcFfm9/64f1a9ddd0246590df69e9ef-ko-fi-logo-02-p-500-2.png)](https://ko-fi.com/P5P6ZWLCY)
+
+Smxrez - Models [![ko-fi](https://i.postimg.cc/kGvcFfm9/64f1a9ddd0246590df69e9ef-ko-fi-logo-02-p-500-2.png)](https://ko-fi.com/smxrez)
 
 Alli - Lore
-
-TestAccount666 - Programming [![ko-fi](https://i.postimg.cc/kGvcFfm9/64f1a9ddd0246590df69e9ef-ko-fi-logo-02-p-500-2.png)](https://ko-fi.com/P5P6ZWLCY)
 
 <details>
   <summary></summary>
