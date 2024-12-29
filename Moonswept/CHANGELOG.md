@@ -1,4 +1,4 @@
-# 1.0.0
+## 1.0.0
 
 - Fixed mobile turret spamming detection sound
 - Fixed mobile turret search light not having a proper beam
