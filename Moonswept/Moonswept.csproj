@@ -1,43 +1,78 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- BepInEx Properties -->
+    <PropertyGroup>
+        <AssemblyName>MoonsweptTeam.Moonswept</AssemblyName>
+        <Product>Moonswept</Product>
+        <!-- Change to whatever version you're currently on. -->
+        <Version>1.0.0</Version>
+        <Description>A variety content mod for Lethal Company.</Description>
+        <Source>https://github.com/pseudopulse/Moonswept/</Source>
+    </PropertyGroup>
+
+    <!-- Project Properties -->
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <AssemblyName>Moonswept</AssemblyName>
-        <Description>A template for Lethal Company</Description>
-        <Version>1.0.0</Version>
+        <RootNamespace>Moonswept</RootNamespace>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
-        <PackageReference Include="BepInEx.Core" Version="5.*" />
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*"/>
-        <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" IncludeAssets="compile" />
-        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
-    </ItemGroup>
+    <!-- Enable Nullable for better IDE null-checking -->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-    <ItemGroup>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>lib/Assembly-CSharp.dll</HintPath>
-            <Publicize>true</Publicize>
-        </Reference>
-        <Reference Include="LethalLib">
-            <HintPath>lib/LethalLib.dll</HintPath>
-        </Reference>
-        <Reference Include="MMHOOK_Assembly-CSharp">
-            <HintPath>lib/MMHOOK_Assembly-CSharp.dll</HintPath>
-            <Publicize>true</Publicize>
-        </Reference>
-        <Reference Include="Unity.Netcode.Runtime">
-            <HintPath>lib/Unity.Netcode.Runtime.dll</HintPath>
-        </Reference>
-        <Reference Include="Unity.Netcode.Components">
-            <HintPath>lib/Unity.Netcode.Components.dll</HintPath>
-        </Reference>
-    </ItemGroup>
+    <!-- Set NuGet Sources -->
+    <PropertyGroup>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+    </PropertyGroup>
 
+    <!-- Disable Publicizer Warnings -->
+    <PropertyGroup>
+        <NoWarn>$(NoWarn);CS0436</NoWarn>
+    </PropertyGroup>
+
+    <!-- Embed Debug Symbols for Easier Debugging -->
+    <PropertyGroup>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>embedded</DebugType>
+        <!--
+        Trim the project path to prevent players from potentially
+        viewing Private Information in stack traces.
+        -->
+        <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=./</PathMap>
+    </PropertyGroup>
+
+    <!-- Primary Package References -->
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.Core" Version="5.4.21" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.1.0" PrivateAssets="all"/>
+        <PackageReference Include="LethalCompany.GameLibs.Steam" Version="67.0.0-ngd.0" Publicize="true" PrivateAssets="all"/>
+        <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" IncludeAssets="compile" PrivateAssets="all"/>
+        <PackageReference Include="TeamBMX.LobbyCompatibility" Version="1.3.0" PrivateAssets="all"/>
+        <PackageReference Include="Evaisa.LethalLib" Version="0.16.2"/>
+    </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Evaisa.NetcodePatcher.MSBuild" Version="3.3.4" PrivateAssets="all"/>
+    </ItemGroup>
+    <ItemGroup>
+        <NetcodePatch Include="$(TargetPath)"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="TestAccount666.TestAccountCore">
+            <HintPath>..\include\TestAccountCore.dll</HintPath>
+        </Reference>
     </ItemGroup>
 </Project>
