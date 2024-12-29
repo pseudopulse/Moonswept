@@ -4,7 +4,8 @@
 - Fixed mobile turret search light not having a proper beam
 - Lowered Cleaner Drone TZP effect rate
 - Fixed mobile turret shooting through doors
-- Lowered the default spawn rate of both mobile turret and cleaning drone
+- Lowered the default spawn rate of mobile turret to 40
+- Lowered the default spawn rate of cleaning drone to 65
 - Made the scan node follow the cleaning drone
 - Optimized package size
 - Mobile turret can now sometimes strafe and shoot
