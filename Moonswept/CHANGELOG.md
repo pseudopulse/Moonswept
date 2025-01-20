@@ -9,6 +9,7 @@
 - Changed Cleaning Drone texture
 - Cleaning Drone can now open doors
 - Fixed Cleaning Drone hit detection
+- Cleaning Drone fog now gives funny TZP pitch
 
 ## 1.0.0
 
