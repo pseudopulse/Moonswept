@@ -1,3 +1,15 @@
+## 1.1.0
+
+- Changed Mobile Turret texture
+- Changed Mobile Turret model
+- Mobile Turret now turns faster while aiming
+- Lowered Mobile Turret's FOV
+- Mobile turret can now open doors
+- Added Mobile Turret hit detection (Aggro mode)
+- Changed Cleaning Drone texture
+- Cleaning Drone can now open doors
+- Fixed Cleaning Drone hit detection
+
 ## 1.0.0
 
 - Fixed mobile turret spamming detection sound
