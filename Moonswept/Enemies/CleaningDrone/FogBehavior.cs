@@ -13,13 +13,14 @@ public class FogBehavior : MonoBehaviour {
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
     public void FixedUpdate() {
-        var localPlayer = GameNetworkManager.Instance.localPlayerController;
+        //TODO: Possibly improve this?
+        foreach (var playerScript in StartOfRound.Instance.allPlayerScripts) {
+            if (!playerScript || playerScript.isPlayerDead || !playerScript.isPlayerControlled) continue;
 
-        if (!localPlayer || localPlayer.isPlayerDead || !localPlayer.isPlayerControlled) return;
+            if (!collider.bounds.Contains(playerScript.playerEye.position)) continue;
 
-        if (collider.bounds.Contains(localPlayer.playerEye.position)) {
-            localPlayer.increasingDrunknessThisFrame = true;
-            localPlayer.drunknessInertia = Mathf.Clamp(localPlayer.drunknessInertia + Time.fixedDeltaTime / 2F * localPlayer.drunknessSpeed, 0.1F, 4.5F);
+            playerScript.drunknessInertia = Mathf.Clamp(playerScript.drunknessInertia + Time.fixedDeltaTime / 2F * playerScript.drunknessSpeed, 0.1F, 4.5F);
+            playerScript.increasingDrunknessThisFrame = true;
         }
 
         _stopwatch += Time.fixedDeltaTime;
