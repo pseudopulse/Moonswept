@@ -37,7 +37,7 @@ public class CleaningDroneAI : EnemyAI {
         modelRoot.transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.fixedDeltaTime);
         _movementStopwatch += Time.fixedDeltaTime;
         if (_movementStopwatch >= 4F) _movementStopwatch = 0;
-        modelRoot.transform.localPosition = new(0, 8.24F + movement.Evaluate(_movementStopwatch) * 4, 0);
+        modelRoot.transform.localPosition = new(0, 6.24F + movement.Evaluate(_movementStopwatch) * 4, 0);
     }
 
     public override void DoAIInterval() {
@@ -87,10 +87,6 @@ public class CleaningDroneAI : EnemyAI {
         SwitchToBehaviourState((int) BehaviourState.RETREAT);
         _initialPos = transform.position;
         _currentTargetNode = ChooseFarthestNodeFromPosition(transform.position);
-        enemyHP -= force;
-
-        if (enemyHP > 0) return;
-        KillEnemyClientRpc(true);
     }
 
     [ClientRpc]
