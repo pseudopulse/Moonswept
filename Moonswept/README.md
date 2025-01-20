@@ -13,7 +13,7 @@ Feedback/Bugs? Use the thread in the [LCModding Discord](https://discord.gg/lcmo
 <details>
   <summary>Cleaning Drone</summary>
 
-![](https://i.postimg.cc/rFt5XxRX/Joe-Good-Meal-fotor-bg-remover-20240416145827-3.png)
+![](https://i.postimg.cc/SsXHsj8g/Cleaner-2.png)
 
 ```
 S.D.L (Sigurd’s Danger Level): 5%
@@ -30,7 +30,7 @@ There seems to be no evidence of who made these devices.
 <details>
   <summary>Mobile Turret</summary>
 
-![](https://i.postimg.cc/xTjZJ4Kc/untitled-removebg-preview-2.png)
+![](https://i.postimg.cc/mD8tPRhh/Turret3.png)
 
 ```
 S.D.L (Sigurd’s Danger Level): 65%
