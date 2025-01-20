@@ -1,6 +1,7 @@
 using GameNetcodeStuff;
 using Unity.Netcode;
 using UnityEngine;
+using Math = System.Math;
 
 namespace Moonswept.Enemies.MovingTurret;
 
@@ -19,15 +20,19 @@ public class MovingTurret : EnemyAI {
     private bool _isDoingGunshots;
     private PlayerControllerB _lastTarget;
 
-    private const float _VIEW_DISTANCE = 8F;
-    private const float _BULLET_FIRE_WIDTH = 25F;
-    private const int _DAMAGE_AMOUNT = 15;
-    private const float _DEFAULT_SPEED = 2F;
+    private float _angerTimer;
+
+    private const float _VIEW_DISTANCE = 5F;
+    private const float _BULLET_FIRE_WIDTH = 15F;
+    private const int _DAMAGE_AMOUNT = 5;
+    private const float _DEFAULT_SPEED = 3F;
     private const float _CHASE_SPEED = 14F;
     private const float _WIDTH_FOV = 80F;
     private const float _FIRE_DELAY = 0.21F;
     private const float _LOCK_ON_TIME = 1F;
+    private const float _ANGER_TIME = 1F;
     private const float _TURN_SPEED = 4F;
+    private const float _TARGET_TURN_SPEED = 9.6F;
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
     private enum BehaviourState {
@@ -56,7 +61,9 @@ public class MovingTurret : EnemyAI {
             return;
         }
 
-        if (currentBehaviourStateIndex != (int) BehaviourState.FIRING && targetPlayer) AimAtTarget();
+        _angerTimer = Math.Max(_angerTimer - Time.fixedDeltaTime, 0F);
+
+        if ((currentBehaviourStateIndex != (int) BehaviourState.FIRING || _angerTimer > 0) && targetPlayer) AimAtTarget();
 
         if (currentBehaviourStateIndex is (int) BehaviourState.PATROLLING or (int) BehaviourState.CHASING) ResetAim();
 
@@ -89,7 +96,7 @@ public class MovingTurret : EnemyAI {
 
     private void AimAtTarget() {
         aimTarget.LookAt(targetPlayer.gameplayCamera.transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, aimTarget.eulerAngles.y, 0), _TURN_SPEED * Time.fixedDeltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, aimTarget.eulerAngles.y, 0), _TARGET_TURN_SPEED * Time.fixedDeltaTime);
     }
 
     private void ResetAim() {
@@ -99,6 +106,22 @@ public class MovingTurret : EnemyAI {
 
         aimTarget.LookAt(lookAt);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, aimTarget.eulerAngles.y, 0), _TURN_SPEED * Time.fixedDeltaTime);
+    }
+
+    public override void HitEnemy(int force = 1, PlayerControllerB playerWhoHit = null, bool playHitSFX = false, int hitID = -1) {
+        base.HitEnemy(force, playerWhoHit, playHitSFX, hitID);
+
+        if (!playerWhoHit) return;
+
+        _angerTimer = _ANGER_TIME;
+        targetPlayer = playerWhoHit;
+
+        _lockOnTimer = _LOCK_ON_TIME;
+        SwitchToBehaviourStateOnLocalClient((int) BehaviourState.SPOTTED_PLAYER);
+
+        var localPlayer = StartOfRound.Instance.localPlayerController;
+        if (targetPlayer != localPlayer) return;
+        SwitchToBehaviourServerRpc((int) BehaviourState.SPOTTED_PLAYER);
     }
 
     private void HandleGunshots() {
