@@ -1,3 +1,8 @@
+## 1.1.1
+
+- Fixed duplicate info entries
+- Made AssetBundle slightly smaller
+
 ## 1.1.0
 
 - Changed Mobile Turret texture
