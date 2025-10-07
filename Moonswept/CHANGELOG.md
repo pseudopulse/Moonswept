@@ -1,3 +1,7 @@
+## 1.2.0
+
+- Fixed v73 compatibility
+
 ## 1.1.1
 
 - Fixed duplicate info entries
