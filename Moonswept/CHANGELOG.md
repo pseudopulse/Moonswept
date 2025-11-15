@@ -1,3 +1,7 @@
+## 1.3.0
+
+- Improved Cleaning Drone performance
+
 ## 1.2.0
 
 - Fixed v73 compatibility
