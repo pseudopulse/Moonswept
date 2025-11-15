@@ -33,6 +33,7 @@ public class MovingTurret : EnemyAI {
     private const float _ANGER_TIME = 1F;
     private const float _TURN_SPEED = 4F;
     private const float _TARGET_TURN_SPEED = 9.6F;
+    private const int _OBSTACLE_LAYER_MASK = 1 << 9;
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
     private enum BehaviourState {
@@ -44,7 +45,7 @@ public class MovingTurret : EnemyAI {
 
     public override void Start() {
         base.Start();
-        SwitchToBehaviourState((int) BehaviourState.PATROLLING);
+        SwitchToBehaviourState((int)BehaviourState.PATROLLING);
         StartSearch(transform.position);
         source.Play();
     }
@@ -54,18 +55,18 @@ public class MovingTurret : EnemyAI {
 
         if (isEnemyDead) return;
 
-        searchLight.gameObject.SetActive(currentBehaviourStateIndex == (int) BehaviourState.SPOTTED_PLAYER);
+        searchLight.gameObject.SetActive(currentBehaviourStateIndex == (int)BehaviourState.SPOTTED_PLAYER);
 
         if (stunNormalizedTimer >= 0F) {
             agent.speed = 0;
             return;
         }
 
-        _angerTimer = Math.Max(_angerTimer - Time.fixedDeltaTime, 0F);
+        _angerTimer = Math.Max(_angerTimer - Time.deltaTime, 0F);
 
-        if ((currentBehaviourStateIndex != (int) BehaviourState.FIRING || _angerTimer > 0) && targetPlayer) AimAtTarget();
+        if ((currentBehaviourStateIndex != (int)BehaviourState.FIRING || _angerTimer > 0) && targetPlayer) AimAtTarget();
 
-        if (currentBehaviourStateIndex is (int) BehaviourState.PATROLLING or (int) BehaviourState.CHASING) ResetAim();
+        if (currentBehaviourStateIndex is (int)BehaviourState.PATROLLING or (int)BehaviourState.CHASING) ResetAim();
 
         HandleGunshots();
     }
@@ -75,7 +76,7 @@ public class MovingTurret : EnemyAI {
 
         if (isEnemyDead || StartOfRound.Instance.allPlayersDead) return;
 
-        switch ((BehaviourState) currentBehaviourStateIndex) {
+        switch ((BehaviourState)currentBehaviourStateIndex) {
             case BehaviourState.PATROLLING:
                 DoPatrollingInterval();
                 break;
@@ -96,16 +97,17 @@ public class MovingTurret : EnemyAI {
 
     private void AimAtTarget() {
         aimTarget.LookAt(targetPlayer.gameplayCamera.transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, aimTarget.eulerAngles.y, 0), _TARGET_TURN_SPEED * Time.fixedDeltaTime);
+        var targetEuler = Quaternion.Euler(0, aimTarget.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetEuler, _TARGET_TURN_SPEED * Time.deltaTime);
     }
 
     private void ResetAim() {
         var lookAt = _targetLastSeenAt;
-
         if (lookAt == Vector3.zero) lookAt = agent.steeringTarget;
 
         aimTarget.LookAt(lookAt);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, aimTarget.eulerAngles.y, 0), _TURN_SPEED * Time.fixedDeltaTime);
+        var targetEuler = Quaternion.Euler(0, aimTarget.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetEuler, _TURN_SPEED * Time.deltaTime);
     }
 
     public override void HitEnemy(int force = 1, PlayerControllerB playerWhoHit = null, bool playHitSFX = false, int hitID = -1) {
@@ -117,17 +119,17 @@ public class MovingTurret : EnemyAI {
         targetPlayer = playerWhoHit;
 
         _lockOnTimer = _LOCK_ON_TIME;
-        SwitchToBehaviourStateOnLocalClient((int) BehaviourState.SPOTTED_PLAYER);
+        SwitchToBehaviourStateOnLocalClient((int)BehaviourState.SPOTTED_PLAYER);
 
         var localPlayer = StartOfRound.Instance.localPlayerController;
         if (targetPlayer != localPlayer) return;
-        SwitchToBehaviourServerRpc((int) BehaviourState.SPOTTED_PLAYER);
+        SwitchToBehaviourServerRpc((int)BehaviourState.SPOTTED_PLAYER);
     }
 
     private void HandleGunshots() {
         if (!_isDoingGunshots) return;
 
-        _firingDelay += Time.fixedDeltaTime;
+        _firingDelay += Time.deltaTime;
 
         if (_firingDelay < _FIRE_DELAY) return;
 
@@ -137,7 +139,7 @@ public class MovingTurret : EnemyAI {
 
         if (CheckLineOfSightForPlayer(_BULLET_FIRE_WIDTH) != localPlayer) return;
 
-        if (Physics.Linecast(eye.position, localPlayer.transform.position, 1 << 9, QueryTriggerInteraction.Collide)) return;
+        if (Physics.Linecast(eye.position, localPlayer.transform.position, _OBSTACLE_LAYER_MASK, QueryTriggerInteraction.Collide)) return;
 
         localPlayer.DamagePlayer(_DAMAGE_AMOUNT, true, true, CauseOfDeath.Gunshots);
     }
@@ -154,7 +156,7 @@ public class MovingTurret : EnemyAI {
 
         StopSearch(currentSearch);
         _lastTarget = targetPlayer;
-        SwitchToBehaviourState((int) BehaviourState.CHASING);
+        SwitchToBehaviourState((int)BehaviourState.CHASING);
     }
 
     private void DoSpottedPlayerInterval() {
@@ -166,7 +168,7 @@ public class MovingTurret : EnemyAI {
 
         _lockOnTimer = 0F;
         StartGunshotsClientRpc();
-        SwitchToBehaviourState((int) BehaviourState.FIRING);
+        SwitchToBehaviourState((int)BehaviourState.FIRING);
     }
 
     private void DoChasingInterval() {
@@ -177,19 +179,22 @@ public class MovingTurret : EnemyAI {
         if (targetPlayer) _targetLastSeenAt = targetPlayer.transform.position;
 
         var foundNewTarget = TargetClosestPlayer(_VIEW_DISTANCE, true);
-        var isTargetObstructed = !foundNewTarget || Physics.Linecast(eye.position, targetPlayer.transform.position, 1 << 9, QueryTriggerInteraction.Collide);
+
+        var isTargetObstructed = !foundNewTarget || Physics.Linecast(eye.position, targetPlayer.transform.position, _OBSTACLE_LAYER_MASK,
+            QueryTriggerInteraction.Collide);
         foundNewTarget = !isTargetObstructed;
 
         var hasLineOfSightToLastTarget = _lastTarget && CheckLineOfSightForPosition(_lastTarget.transform.position, _WIDTH_FOV);
         var isLastTargetObstructed = !hasLineOfSightToLastTarget
-                                  || Physics.Linecast(eye.position, _lastTarget.transform.position, 1 << 9, QueryTriggerInteraction.Collide);
+                                     || Physics.Linecast(eye.position, _lastTarget.transform.position, _OBSTACLE_LAYER_MASK,
+                                         QueryTriggerInteraction.Collide);
         hasLineOfSightToLastTarget = !isLastTargetObstructed;
 
         if (hasLineOfSightToLastTarget) targetPlayer = _lastTarget;
 
         if (hasLineOfSightToLastTarget || foundNewTarget) {
             _lockOnTimer = 0F;
-            SwitchToBehaviourState((int) BehaviourState.SPOTTED_PLAYER);
+            SwitchToBehaviourState((int)BehaviourState.SPOTTED_PLAYER);
             return;
         }
 
@@ -197,7 +202,7 @@ public class MovingTurret : EnemyAI {
 
         _targetLastSeenAt = Vector3.zero;
         StartSearch(transform.position);
-        SwitchToBehaviourState((int) BehaviourState.PATROLLING);
+        SwitchToBehaviourState((int)BehaviourState.PATROLLING);
     }
 
     private void DoFiringInterval() {
@@ -209,7 +214,7 @@ public class MovingTurret : EnemyAI {
 
         _firingTimer = 0F;
         StartSearch(transform.position);
-        SwitchToBehaviourState((int) BehaviourState.CHASING);
+        SwitchToBehaviourState((int)BehaviourState.CHASING);
         StopGunshotsClientRpc();
     }
 
