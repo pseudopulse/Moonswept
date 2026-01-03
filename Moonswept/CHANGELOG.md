@@ -1,3 +1,7 @@
+## 1.3.1
+
+- Fixed Mobile Turret particles
+
 ## 1.3.0
 
 - Improved Cleaning Drone performance
