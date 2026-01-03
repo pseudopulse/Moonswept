@@ -1,3 +1,7 @@
+## 1.3.2
+
+- Fixed Cleaning Drone freaking out and throwing errors
+
 ## 1.3.1
 
 - Fixed Mobile Turret particles
