@@ -1,3 +1,8 @@
+## 1.4.0
+
+- Finally support v81
+- Fixed insane sniper turrets
+
 ## 1.3.2
 
 - Fixed Cleaning Drone freaking out and throwing errors
