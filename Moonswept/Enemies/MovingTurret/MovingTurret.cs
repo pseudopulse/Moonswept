@@ -23,6 +23,7 @@ public class MovingTurret : EnemyAI {
     private float _angerTimer;
 
     private const float _VIEW_DISTANCE = 5F;
+    private const int _BULLET_FLY_DISTANCE = 13;
     private const float _BULLET_FIRE_WIDTH = 15F;
     private const int _DAMAGE_AMOUNT = 5;
     private const float _DEFAULT_SPEED = 3F;
@@ -137,7 +138,7 @@ public class MovingTurret : EnemyAI {
 
         var localPlayer = GameNetworkManager.Instance.localPlayerController;
 
-        if (CheckLineOfSightForPlayer(_BULLET_FIRE_WIDTH) != localPlayer) return;
+        if (CheckLineOfSightForPlayer(_BULLET_FIRE_WIDTH, _BULLET_FLY_DISTANCE) != localPlayer) return;
 
         if (Physics.Linecast(eye.position, localPlayer.transform.position, _OBSTACLE_LAYER_MASK, QueryTriggerInteraction.Collide)) return;
 
